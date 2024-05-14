@@ -1,13 +1,13 @@
+import React from 'react';
+import { TouchableOpacity, Text } from 'react-native';
+import styles from '../styles/styles';
 
-
-
-const Boton = () => {
-
+const Button = ({ title, onPress }) => {
     return (
-        <>
-        <h1>Botones</h1>
-        </>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+            <Text style={styles.buttonText}>{title}</Text>
+        </TouchableOpacity>
     );
-}
+};
 
-export default Boton;
+export default Button;

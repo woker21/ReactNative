@@ -1,51 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable, Button } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import WelcomeScreen from './screens/WelcomeScreen';
+import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
 
-  const [valor, setValor] = useState(0);
-
-  
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.white}>Hola perros</Text>
-
-      <Pressable onPress={() => setValor(valor + 1)}>
-        <Text style={[styles.white, styles.boton]}>Subir valor</Text>
-      </Pressable>
-
-      <StatusBar />
-      <Text style={styles.white}>{valor}</Text>
-      
-      <Pressable onPress={() => setValor(valor - 1)}>
-        <Text style={[styles.white, styles.botonBlue]}>Bajar valor</Text>
-      </Pressable>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Welcome" component={WelcomeScreen}/>
+        <Stack.Screen name="Login" component={LoginScreen}/>
+        <Stack.Screen name="Register" component={RegisterScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#0e0e0e',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#fff',
-  },
-  white: {
-    color: '#fff',
-  },
-  boton: {
-    margin: 50,
-    backgroundColor: '#ff0404',
-    padding: 20,
-    borderRadius: 20,
-  },
-  botonBlue: {
-    margin: 50,
-    backgroundColor: '#0628be',
-    padding: 20,
-    borderRadius: 20,
-  }
-});
+export default App;

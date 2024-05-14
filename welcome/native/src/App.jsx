@@ -6,6 +6,7 @@ export default function App() {
 
   const [valor, setValor] = useState(0);
 
+  
   return (
     <View style={styles.container}>
       <Text style={styles.white}>Hola perros</Text>

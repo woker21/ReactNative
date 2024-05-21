@@ -1,23 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
+import Button from '../components/Buttons';
+import styles from '../styles/styles';
 
 const LoginScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Login Screen</Text>
+            <Text style={styles.title}>Iniciar Sesión</Text>
+            {/* Agregar campos de inicio de sesión aquí */}
+            <Button title="Iniciar Sesión" onPress={() => {/* Manejar inicio de sesión */ }} />
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 24,
-    },
-});
 
 export default LoginScreen;

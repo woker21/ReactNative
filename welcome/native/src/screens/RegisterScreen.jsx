@@ -1,16 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import Button from '../components/Buttons';
-import styles from '../styles/styles';
+import { View, Text, StyleSheet } from 'react-native';
 
 const RegisterScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Registrarse</Text>
-            {/* Agregar campos de registro aquí */}
-            <Button title="Registrarse" onPress={() => {/* Manejar registro */ }} />
+            <Text style={styles.text}>Register Screen</Text>
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    text: {
+        fontSize: 24,
+    },
+});
 
 export default RegisterScreen;

@@ -5,7 +5,7 @@ import Button from '../components/Buttons';
 const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>DocSentinal</Text>
+            <Text style={styles.title}>DocSentinel</Text>
             <Text style={styles.subtitle}>¡Bienvenido!</Text>
             <View style={styles.buttonContainer}>
                 <Button
